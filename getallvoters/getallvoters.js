@@ -5,14 +5,14 @@ import fs from "fs";
 async function iterate() {
        let wallets = [];
        
-       for (let i = 1; i < 350; i++) {
+       for (let i = 1; i < 351; i++) {
               console.log("- Fetching "+i+ " of 350\n")
               let twallets = await fetch("https://api.ark.io/api/wallets?page=" +i+"&limit=100");
               twallets.json().then(function(d) {
                      if (d.data) {
                             d.data.forEach(function(tw) {
                                    if (tw) {
-                                          if (tw.attributes.length != 0) {
+                                          if (tw.attributes.vote) {
                                                  wallets.push("{\"address\":\""+tw.address+"\"},");
                                           }
                                    }
