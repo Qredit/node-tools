@@ -5,8 +5,8 @@ import fs from "fs";
 async function iterate() {
        let wallets = [];
        
-       for (let i = 1; i < 282; i++) {
-              console.log("- Fetching "+i+ " of 282\n")
+       for (let i = 1; i < 300; i++) {
+              console.log("- Fetching "+i+ " of 300\n")
               let twallets = await fetch("https://api.ark.io/api/wallets?page=" +i+"&limit=100");
               twallets.json().then(function(d) {
                      if (d.data) {
